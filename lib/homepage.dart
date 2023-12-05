@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Container(
             width: double.infinity,
             height: 70,
-            color: Colors.black,
+            color: Colors.black87,
             child: Row(
               children: [
                 SizedBox(
