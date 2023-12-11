@@ -12,7 +12,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   bool isText = false;
   bool isText1 = false;
   bool isText2 = false;
@@ -20,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isText4 = false;
   bool isText5 = false;
   bool isHovericon = false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 Firstpage(),
                 Secondpage(),
                 Thirdpage(),
-
               ],
             ),
           ),
           Container(
             width: double.infinity,
             height: 70,
-            color: Colors.black87,
+            color: Colors.grey,
             child: Row(
               children: [
                 SizedBox(
@@ -80,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           value: 2,
                         ),
                       ],
+
                       hint: Text(
                         "Home",
                         style: TextStyle(
@@ -87,8 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: isText ? Color(0xffC9F31D) : Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
-                      onChanged: (value) {
-                      },
+                      onChanged: (value) {},
                       isDense: true,
                     ),
                   ),
@@ -127,23 +124,34 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   width: 10,
                 ),
-                InkWell(
-                  onHover: (value) {
-                    isText3 = value;
-                    setState(() {});
-                  },
-                  onTap: () {},
-                  child: Text(
-                    "Portfolio",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: isText3 ? Color(0xffC9F31D) : Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
+                // InkWell(
+                //   onHover: (value) {
+                //     isText3 = value;
+                //     setState(() {});
+                //   },
+                //   onTap: () {},
+                //   child: Text(
+                //     "Portfolio",
+                //     style: TextStyle(
+                //         fontSize: 15,
+                //         color: isText3 ? Color(0xffC9F31D) : Colors.white,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                // ),
+                // Icon(
+                //   Icons.arrow_drop_down,
+                //   color: Colors.white,
+                // ),
+                PopupMenuButton(
+                  position: PopupMenuPosition.under,
+                  itemBuilder: (context) => [
+                    PopupMenuItem(
+                      child: Text("Multipage"),
+                      value: 1,
+                    ),
+                  ],
+                  child: Text("Portfolio"),
+
                 ),
                 SizedBox(
                   width: 10,
